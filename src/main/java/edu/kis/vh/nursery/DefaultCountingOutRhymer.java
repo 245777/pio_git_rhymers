@@ -6,12 +6,28 @@ package edu.kis.vh.nursery;
  */
 public class DefaultCountingOutRhymer {
 
-    public static final int empty = -1;
-    public static final int capacity = 12;
-    public static final int full = capacity-1;
-    private final int[] numbers = new int[capacity];
+    private static final int empty = -1;
+    private static final int capacity = 12;
+    private static final int full = getCapacity() -1;
+    private final int[] numbers = new int[getCapacity()];
 
-    public int total = empty;
+    public static int getEmpty() {
+        return empty;
+    }
+
+    public static int getCapacity() {
+        return capacity;
+    }
+
+    public static int getFull() {
+        return full;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    private int total = getEmpty();
 
     /**
      * Dodaje in na górę stosu
@@ -19,7 +35,7 @@ public class DefaultCountingOutRhymer {
      */
     public void countIn(int in) {
         if (!isFull())
-            numbers[++total] = in;
+            getNumbers()[setTotal(getTotal() + 1)] = in;
     }
 
     /**
@@ -58,4 +74,11 @@ public class DefaultCountingOutRhymer {
         return numbers[total--];
     }
 
+    public int[] getNumbers() {
+        return numbers;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
 }
