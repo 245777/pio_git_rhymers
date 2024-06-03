@@ -14,7 +14,7 @@ public class DefaultCountingOutRhymer {
     public int total = empty;
 
     /**
-     * Dodaje in na góre stosu
+     * Dodaje in na górę stosu
      * @param in
      */
     public void countIn(int in) {
@@ -22,20 +22,36 @@ public class DefaultCountingOutRhymer {
             numbers[++total] = in;
     }
 
+    /**
+     * sprawdza czy stos pusty
+     * @return
+     */
     public boolean callCheck() {
         return total == empty;
     }
-        
+
+    /**
+     * sprawdza czy stos jest pełny
+     * @return
+     */
     public boolean isFull() {
         return total == full;
     }
-        
+
+    /**
+     * zwraca liczbę elementów na stosie
+     * @return
+     */
     protected int peekaboo() {
         if (callCheck())
             return empty;;
         return numbers[total];
     }
-            
+
+    /**
+     * pobiera element ze stosu
+     * @return
+     */
     public int countOut() {
         if (callCheck())
             return empty;
