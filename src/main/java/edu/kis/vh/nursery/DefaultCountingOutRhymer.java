@@ -1,5 +1,9 @@
 package edu.kis.vh.nursery;
 
+/**
+ * Jest to stos
+ * ma pojemność capacity
+ */
 public class DefaultCountingOutRhymer {
 
     private static final int empty = -1;
@@ -25,7 +29,10 @@ public class DefaultCountingOutRhymer {
 
     private int total = getEmpty();
 
-
+    /**
+     * Dodaje in na góre stosu
+     * @param in
+     */
     public void countIn(int in) {
         if (!isFull())
             getNumbers()[setTotal(getTotal() + 1)] = in;
